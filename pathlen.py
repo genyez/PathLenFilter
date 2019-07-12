@@ -15,15 +15,13 @@ def getAllDrv():
 def work():
     outlist = []
     filecount = 0
-    for drv in getAllDrv():
-        print("start searching drive %s" % drv)
-        for root ,dirs, files in os.walk(drv):
-            for file in files:
-                filecount += 1
-                print("searched file: %d" % filecount)
-                fullpath = os.path.join(os.path.abspath(root), file)
-                if len(fullpath) > maxlen:
-                    outlist.append(fullpath)
+    for root ,dirs, files in os.walk(os.path.curdir):
+        for file in files:
+            filecount += 1
+            print("searched file: %d" % filecount)
+            fullpath = os.path.join(os.path.abspath(root), file)
+            if len(fullpath) > maxlen:
+                outlist.append(fullpath)
     return outlist
 
 def main():
