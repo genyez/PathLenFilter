@@ -1,16 +1,7 @@
 import os
 import sys
-import string
 
 maxlen = 255
-def getAllDrv():
-    drvs = []
-    for c in string.ascii_uppercase:
-        path = c + ":"
-        if os.path.isdir(path):
-            drvs.append(path)
-
-    return drvs
 
 def work():
     outlist = []
